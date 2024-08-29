@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-     <p>hello world !</p>
+     <p className='text-red-600'>hello world !</p>
     </>
   )
 }
