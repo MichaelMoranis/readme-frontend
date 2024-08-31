@@ -1,28 +1,12 @@
-import { SearchLoterias } from "./hooks/SearchLoterias";
+import bannerLoteria from "./assets/loteria-banner.png"
 
-interface SearchLoteriaResult {
-  data: string[] | null;
-}
-
-export function AppMegaSena() {
-  const { data }: SearchLoteriaResult = SearchLoterias("megasena");
+export function App() {
   return (
     <div className="text-center absolute top-52 max-h-screen text-black bg-zinc-100 flex w-full  p-6 rounded-t-[3rem]">
-      <div className="flex items-center justify-center p-10 gap-10 flex-wrap">
-        {/* Verifique se data é um array e mapeie os itens */}
-        {data && Array.isArray(data) ? (
-          data.map((item, index) => (
-            <span
-              key={index}
-              className="flex items-center justify-center bg-zinc-300 rounded-full p-2 font-montSerrat font-bold text-black text-xl"
-            >
-              {item}
-            </span>
-          ))
-        ) : (
-          <p>Carregando...</p>
-        )}
-      </div>
+        <div className="flex flex-col gap-4 p-4">
+          <h1 className="font-montSerrat font-bold text-xl">Veja os números sorteios das loterias Caixa</h1>
+          <img className="w-full rounded-full" src={bannerLoteria} alt="imagem da caixa" />
+        </div>
     </div>
   );
 }

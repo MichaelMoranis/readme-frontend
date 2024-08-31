@@ -6,12 +6,15 @@ import { SearchLoterias } from "../../hooks/SearchLoterias";
 export default function SortContainer() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [bgColor, setBgColor] = useState("bg-customGreem");
+  const [bgColor, setBgColor] = useState("bg-customMegasena");
 
   useEffect(() => {
     // Verifica a rota atual e define a cor de fundo correspondente
 
     switch (location.pathname) {
+      case "/":
+        setBgColor("bg-ShowLoterias");
+        break;
       case "/megasena":
         setBgColor("bg-customMegasena");
         break;
@@ -58,6 +61,7 @@ export default function SortContainer() {
         id="select-game"
         onChange={handleSelectChange}
       >
+        <option value="/">Sorteios</option>
         <option value="megasena">Mega Sena</option>
         <option value="lotofacil">Loto Fácil</option>
         <option value="quina">Quina</option>
@@ -67,11 +71,11 @@ export default function SortContainer() {
       <div className="flex flex-col justify-center items-center gap-2">
         <LogoSena />
         <h2 className="font-montSerrat font-bold text-xl text-white">
-          {formattLoteria}
+          {formattLoteria === "/" ? "" : formattLoteria}
         </h2>
       </div>
       <h4 className="font-montSerrat font-bold text-xl text-white">
-        Concurso - {concurso}
+        Concurso - {formattLoteria === "/" ? "" : concurso}
       </h4>
     </div>
   );

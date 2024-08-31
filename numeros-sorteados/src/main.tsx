@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { AppMegaSena } from "./App.tsx";
+import { App } from "./App.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Quina } from "./components/Quina/Quina.tsx";
@@ -8,6 +8,7 @@ import { LayoutRouter } from "./components/Layout/LayoutRouter.tsx";
 import { Lotomania } from "./components/Lotomania/Lotomania.tsx";
 import { Lotofacil } from "./components/Lotofacil/Lotofacil.tsx";
 import { Timemania } from "./components/Timemania/Timemania.tsx";
+import { AppMegaSena } from "./components/MegaSena/MegaSena.tsx";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
     element: <LayoutRouter />, // Usando o Layout como elemento principal
     // errorElement: <ErrorPage />,
     children: [
+      {
+        path: "/",
+        element: <App />,
+      },
       {
         path: "megasena",
         element: <AppMegaSena />,

@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        ShowLoterias: '#0837be',
         customMegasena: '#6BEFA3',
         customQuina: '#8666EF',
         customLotoFacil: '#DD7AC6',
