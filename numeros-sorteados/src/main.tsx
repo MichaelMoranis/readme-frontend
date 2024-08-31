@@ -5,6 +5,9 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Quina } from './components/Quina/Quina.tsx'
 import { LayoutRouter } from './components/Layout/LayoutRouter.tsx'
+import { Lotomania } from './components/Lotomania/Lotomania.tsx'
+import { Lotofacil } from './components/Lotofacil/Lotofacil.tsx'
+import { Timemania } from './components/Timemania/Timemania.tsx'
 
 const router = createBrowserRouter([
   {
@@ -20,18 +23,18 @@ const router = createBrowserRouter([
         path: 'quina',
         element: <Quina />,
       },
-      // {
-      //   path: 'works',
-      //   element: <Works />,
-      // },
-      // {
-      //   path: 'images',
-      //   element: <Images />,
-      // },
-      // {
-      //   path: 'setup',
-      //   element: <Setup />,
-      // },
+      {
+        path: 'lotomania',
+        element: <Lotomania />,
+      },
+      {
+        path: 'lotofacil',
+        element: <Lotofacil />,
+      },
+      {
+        path: 'timemania',
+        element: <Timemania />,
+      },
     ],
   },
 ])

@@ -8,6 +8,9 @@ export default {
     extend: {
       colors: {
         customGreem: '#6BEFA3'
+      },
+      fontFamily: {
+        montSerrat: ["Montserrat", "sans-serif"]
       }
     },
   },
