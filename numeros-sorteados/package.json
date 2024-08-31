@@ -1,5 +1,6 @@
 {
-  "name": "my-vue-app",
+  "name": "sorteio-loterias",
+  "author": "Michael Moranis",
   "private": true,
   "version": "0.0.0",
   "type": "module",
