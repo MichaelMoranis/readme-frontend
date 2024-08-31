@@ -1,15 +1,14 @@
-import { SearchLoterias } from "./hooks/SearchLoterias"
+import { SearchLoterias } from "./hooks/SearchLoterias";
 
 interface SearchLoteriaResult {
-  data: string[] | null
+  data: string[] | null;
 }
 
 export function AppMegaSena() {
-
-  const  { data }: SearchLoteriaResult = SearchLoterias("megasena")
+  const { data }: SearchLoteriaResult = SearchLoterias("megasena");
   return (
     <div className="text-center absolute top-52 max-h-screen text-black bg-zinc-100 flex w-full  p-6 rounded-t-[3rem]">
-       <div className="flex items-center justify-center p-10 gap-10 flex-wrap">
+      <div className="flex items-center justify-center p-10 gap-10 flex-wrap">
         {/* Verifique se data é um array e mapeie os itens */}
         {data && Array.isArray(data) ? (
           data.map((item, index) => (
@@ -21,10 +20,9 @@ export function AppMegaSena() {
             </span>
           ))
         ) : (
-          <p>No data available</p>
+          <p>Carregando...</p>
         )}
       </div>
-     
-  </div>
-  )
+    </div>
+  );
 }
