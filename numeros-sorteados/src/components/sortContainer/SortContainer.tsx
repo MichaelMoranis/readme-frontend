@@ -1,21 +1,45 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { LogoSena } from "./logo-sena";
 
 export default function SortContainer() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [bgColor, setBgColor] = useState("bg-customGreem");
 
-  const navigate = useNavigate()
+  useEffect(() => {
+    // Verifica a rota atual e define a cor de fundo correspondente
+    switch (location.pathname) {
+      case "/lotofacil":
+        setBgColor("bg-customLotoFacil");
+        break;
+      case "/quina":
+        setBgColor("bg-customQuina");
+        break;
+      case "/lotomania":
+        setBgColor("bg-customLotomania");
+        break;
+      case "/timemania":
+        setBgColor("bg-customTimemania");
+        break;
+      default:
+        setBgColor("bg-customGreem"); // Mega Sena
+        break;
+    }
+  }, [location.pathname]);
+
 
   function handleSelectChange(event: React.ChangeEvent<HTMLSelectElement>) {
     const selectElement = event.target.value;
-    navigate(`${selectElement}`)
+    navigate(`${selectElement}`);
   }
 
   return (
-    <div className="flex flex-col justify-center items-center p-8 gap-4 w-full rounded-b-2xl overflow-hidden bg-customGreem font-montSerrat">
+    <div className={`flex flex-col justify-center items-center p-6 gap-4 w-full overflow-hidden ${bgColor} font-montSerrat`}>
       <select 
         className="bg-zinc-200 border-none rounded-xl p-2 font-montSerrat font-bold"
         name="select-game" 
-        id="mega-sena"
+        id="select-game"
         onChange={handleSelectChange}
       >
         <option value="/">Mega Sena</option>
@@ -25,10 +49,10 @@ export default function SortContainer() {
         <option value="timemania">Timemania</option>
       </select>
       <div className="flex flex-col justify-center items-center gap-2">
-        <LogoSena  />
-        <h2 className="font-montSerrat font-bold text-2xl text-white">Mega Sena</h2>
+        <LogoSena />
+        <h2 className="font-montSerrat font-bold text-xl text-white">Mega Sena</h2>
       </div>
-      <h4 className="font-montSerrat font-bold text-2xl text-white">Concurso 2353</h4>
+      <h4 className="font-montSerrat font-bold text-xl text-white">Concurso 2353</h4>
     </div>
   );
 }

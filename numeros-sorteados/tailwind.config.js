@@ -7,7 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        customGreem: '#6BEFA3'
+        customGreem: '#6BEFA3',
+        customQuina: '#8666EF',
+        customLotoFacil: '#DD7AC6',
+        customLotomania: '#FFAB84',
+        customTimemania: '#ffbf00'
       },
       fontFamily: {
         montSerrat: ["Montserrat", "sans-serif"]
