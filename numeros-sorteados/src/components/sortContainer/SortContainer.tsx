@@ -64,7 +64,7 @@ export default function SortContainer() {
         <option value="/">Sorteios</option>
         <option value="megasena">Mega Sena</option>
         <option value="lotofacil">Loto Fácil</option>
-        <option value="quina">Quina</option>
+        <option value="quina" id="quina">Quina</option>
         <option value="lotomania">Lotomania</option>
         <option value="timemania">Timemania</option>
       </select>
