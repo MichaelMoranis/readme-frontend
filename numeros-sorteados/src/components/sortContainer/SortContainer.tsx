@@ -61,7 +61,7 @@ export default function SortContainer() {
         id="select-game"
         onChange={handleSelectChange}
       >
-        <option value="/">Sorteios</option>
+        <option value="/">{formattLoteria !== "/" ? loteria : "" }</option>
         <option value="megasena">Mega Sena</option>
         <option value="lotofacil">Loto Fácil</option>
         <option value="quina" id="quina">Quina</option>
